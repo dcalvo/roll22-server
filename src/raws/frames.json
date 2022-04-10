@@ -1,0 +1,32 @@
+{
+  "Everest": {
+    "structure": 4,
+    "stress": 4,
+    "armor": 0,
+    "hp": 10,
+    "evasion": 8,
+    "eDefense": 8,
+    "heat": 6,
+    "sensors": 10,
+    "techAttack": 0,
+    "repairCap": 5,
+    "saveTarget": 10,
+    "speed": 4,
+    "systemPoints": 6
+  },
+  "Sagarmatha": {
+    "structure": 4,
+    "stress": 4,
+    "armor": 1,
+    "hp": 8,
+    "evasion": 8,
+    "eDefense": 8,
+    "heat": 6,
+    "sensors": 10,
+    "techAttack": 0,
+    "repairCap": 4,
+    "saveTarget": 10,
+    "speed": 4,
+    "systemPoints": 6
+  }
+}
