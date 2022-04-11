@@ -1,5 +1,6 @@
-import { Frame } from "./game/units"
-import { loadFrames } from "./raws/raw"
+import { Frame } from "./game/frame"
+import { Weapon } from "./game/weapon"
+import loadRaws from "./raws/raw"
 
 enum TileType {
   Floor,
@@ -59,10 +60,18 @@ export function test(payload: { [key: string]: any }) {
   const hexMap = new HexMap()
   hexMap.newMap(payload.width, payload.height)
   hexMap.debugPrint()
-  const availableFrames = loadFrames()
+  const { AvailableFrames, AvailableWeapons } = loadRaws()
   const frames: Frame[] = []
-  availableFrames?.forEach((frameStats, name) => {
+  const weapons: Weapon[] = []
+  AvailableFrames?.forEach((frameStats, name) => {
     frames.push(new Frame(name, frameStats))
   })
-  frames.forEach((frame) => console.log(frame.name, frame.getCurrentStats()))
+  AvailableWeapons?.forEach((weaponStats, name) =>
+    weapons.push(new Weapon(name, weaponStats))
+  )
+  const damage = weapons[0].rollDamage(true)
+  console.log(frames[0].getCurrentStats())
+  console.log(damage)
+  frames[0].takeDamage(damage)
+  console.log(frames[0].getCurrentStats())
 }

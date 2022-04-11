@@ -1,0 +1,15 @@
+{
+  "Assault Rifle": {
+    "size": "main",
+    "type": "rifle",
+    "range": 10,
+    "damage": [
+      {
+        "number": 1,
+        "size": 6,
+        "type": "kinetic"
+      }
+    ],
+    "tags": [{ "name": "reliable", "value": 2 }]
+  }
+}
